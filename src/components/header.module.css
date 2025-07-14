@@ -1,4 +1,4 @@
-/* src/components/header.module.css */
+/* src/components/header.module.css -- MOBILE-FIRST APPROACH */
 
 .header {
   position: sticky;
@@ -28,7 +28,69 @@
   z-index: 101; 
 }
 
-/* --- Desktop Navigation --- */
+/* --- MOBILE STYLES (DEFAULT) --- */
+
+/* Hide the desktop nav by default */
+.navDesktop {
+  display: none;
+}
+
+/* Show the hamburger button by default */
+.hamburgerButton {
+  display: flex; /* <-- THIS IS NOW THE DEFAULT */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 101;
+}
+
+.hamburgerLine {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(5px);
+}
+
+.navMobile a {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+
+/* --- DESKTOP STYLES (THE EXCEPTION) --- */
+
+/* On screens larger than 768px... */
+@media (min-width: 769px) {
+  /* Show the desktop nav */
+  .navDesktop {
+    display: flex;
+  }
+
+  /* Hide the hamburger button */
+  .hamburgerButton {
+    display: none;
+  }
+}
+
 .navDesktop a {
   margin-left: 2rem;
   font-size: 1rem;
@@ -41,63 +103,8 @@
   border-bottom-color: #333;
 }
 
-/* --- Hamburger Button --- */
-.hamburgerButton {
-  display: none; /* Default state: hidden on desktop */
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 101;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
-}
 
-.hamburgerLine {
-  width: 100%;
-  height: 2px;
-  background-color: #333;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* --- Mobile Navigation --- */
-.navMobile {
-  display: none; /* Default state: hidden on desktop */
-}
-
-/* --- Responsive Styles (Tablet and Mobile) --- */
-@media (max-width: 768px) {
-  .navDesktop {
-    display: none; /* Hide desktop nav */
-  }
-
-  .hamburgerButton {
-    display: flex; /* Show hamburger button */
-  }
-
-  .navMobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(5px);
-  }
-
-  .navMobile a {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-  }
-}
-
-/* --- Animation for Hamburger Icon when Menu is Open --- */
+/* --- Animation for Hamburger Icon when Menu is Open (no changes needed here) --- */
 .menuIsOpen .hamburgerLine:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
