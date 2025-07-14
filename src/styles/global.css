@@ -1,0 +1,29 @@
+/* src/styles/global.css */
+
+/* A modern CSS reset to remove default browser styles and ensure consistent sizing. */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a clean, modern font and background/text colors for the whole site. */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #ffffff; /* White background */
+  color: #1a1a1a; /* A very dark grey for text, softer than pure black */
+  line-height: 1.6;
+}
+
+/* Basic styling for all links, removing the default underline. */
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+/* A subtle hover effect for links. */
+a:hover {
+  color: #888888;
+}

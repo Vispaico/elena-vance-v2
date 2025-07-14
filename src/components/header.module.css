@@ -1,0 +1,34 @@
+/* src/components/header.module.css */
+.header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav a {
+  margin-left: 2rem;
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid transparent; 
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* This styles the active link using the aria-current attribute */
+.nav a[aria-current="page"] {
+  border-bottom-color: #333;
+}

@@ -1,0 +1,31 @@
+/* src/styles/contact.module.css */
+.contactContainer {
+  max-width: 700px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.contactContainer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contactContainer p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.emailBox {
+  border: 1px solid #eee;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.emailBox a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
